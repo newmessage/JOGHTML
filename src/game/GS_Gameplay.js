@@ -32,7 +32,7 @@ var USER_LEVEL = 4; // set user level for round stage
 var roundStage = -1;
 
 var wrongGuess = false;
-var gOver = false;
+
 var colorHex = "#01B9A1";
 var text1;
 var box;
