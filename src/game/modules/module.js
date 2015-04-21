@@ -14,7 +14,7 @@
 
 //DEFINE GLOBAL VAR in here
 var m_font = "Arial";
-var textContent_1 = "";
+var textHowTo;
 //GLOBAL VAR END
 function module()
 {
@@ -22,8 +22,8 @@ function module()
 	this.drawString = function(textToDraw, props, color, posX, posY, containerbox, lineW, aligns)
 	{
 		console.log("Draw String");
-		textContent_1 = textToDraw;
-		var textHowTo = new createjs.Text(textContent_1, props, color);
+		var textContent_1 = textToDraw;
+		textHowTo = new createjs.Text(textContent_1, props, color);
 
 		var w = ( textHowTo.getMeasuredWidth() ) * textHowTo.scaleX;
 		var h = ( textHowTo.getMeasuredHeight() ) * textHowTo.scaleY;
@@ -37,10 +37,6 @@ function module()
 		textHowTo.x = posX;
 		textHowTo.y = posY;
 		containerbox.addChild(textHowTo);
-	}
-	this.GraphicsInit = function()
-	{
-		//TODO : Set all graphic init in here
 	}
 
 	//function moveCenter()

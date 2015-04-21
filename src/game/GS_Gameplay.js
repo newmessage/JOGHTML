@@ -34,25 +34,51 @@ var roundStage = -1;
 var wrongGuess = false;
 var gOver = false;
 var colorHex = "#01B9A1";
+var text1;
+var box;
 function GS_Gameplay()
 {
-	
+	box = new createjs.Container();
 	this.GS_Gameplay_Init = function ()
 	{
-		module.drawString( TEXT.EN.GP_TEXT_TUTORIAL_1 , "30px Hacker", "#ffffff", (FAR_ANCHOR<<1)+50, (FAR_ANCHOR<<1) + 100, finish_containerbox, 300, 'center');
+		
+		text1 = TEXT.EN.GP_TEXT_TUTORIAL_1;
+		textHowTo = new createjs.Text(text1, "30px Hacker", "#ffffff");
+
+		var w = ( textHowTo.getMeasuredWidth() ) * textHowTo.scaleX;
+		var h = ( textHowTo.getMeasuredHeight() ) * textHowTo.scaleY;
+
+		textHowTo.textAlign = 'center'; 
+		textHowTo.lineWidth = 300;
+		
+		textHowTo.x = (FAR_ANCHOR<<1)+50;
+		textHowTo.y = (FAR_ANCHOR<<1) + 100;
+		box.addChild(textHowTo);
+		
+		text1 = TEXT.EN.GP_TEXT_TUTORIAL_2;
+		textHowTo = new createjs.Text(text1, "15px Hacker", "#ffffff");
+		textHowTo.textAlign = 'center'; 
+		textHowTo.lineWidth = 300;
+		
+		textHowTo.x = (FAR_ANCHOR<<1)+50;
+		textHowTo.y = (FAR_ANCHOR<<1) + 250;
+		box.addChild(textHowTo);
+		finish_containerbox.addChild(box);
+		
+		//module.drawString( TEXT.EN.GP_TEXT_TUTORIAL_1 , "30px Hacker", "#ffffff", (FAR_ANCHOR<<1)+50, (FAR_ANCHOR<<1) + 100, finish_containerbox, 300, 'center');
+		
+		//module.drawString( TEXT.EN.GP_TEXT_TUTORIAL_2 , "15px Hacker", "#ffffff", (FAR_ANCHOR<<1)+50, (FAR_ANCHOR<<1) + 250, finish_containerbox, 200, 'center');
 	}
 	
 	this.onButtonClick = function(e)
 	{
-		console.log(" This should exit the tutorial box!!");
+		console.log("This should exit the tutorial box!!");
 		this.GS_Gameplay_TutorialHide();
 	}
 	this.GS_Gameplay_TutorialHide = function ()
 	{
 		finish_containerbox.removeChildAt(3);
-		console.log(textContent_1.text);
-		textContent_1.text = "";
-		console.log(textContent_1.text);
+		box.removeAllChildren();
 		mainStage.update();
 		Gameplay_Init();
 	}
