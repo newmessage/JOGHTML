@@ -15,9 +15,9 @@
     this state triggered when user finish the game (whether success or failed)
 */
 
-var isWin = false;
-var stage = null;
-var indexImg = 0;
+var isWin 		= false;
+var stage 		= null;
+var indexImg 	= 0;
 var containerHackBtn;
 var polygonGlow;
 
@@ -37,8 +37,8 @@ function GS_Finish()
 			finishtxt_msg1		= TEXT.EN.FINISH_TEXT_LOSE_MSG_1;
 			finishtxt_msg2		= TEXT.EN.FINISH_TEXT_LOSE_MSG_2;
 			finishtxt_button	= TEXT.EN.FINISH_TEXT_CERTIFIED_2;
-			fsize 	= "40px Hacker";
-			alignY 	= 10;
+			fsize 				= "40px Hacker";
+			alignY 				= 10;
 			
 		}
 		else
@@ -46,7 +46,7 @@ function GS_Finish()
 			finishtxt_msg1		= TEXT.EN.FINISH_TEXT_WIN_MSG_1;
 			finishtxt_msg2		= TEXT.EN.FINISH_TEXT_WIN_MSG_2;
 			finishtxt_button	= TEXT.EN.FINISH_TEXT_CERTIFIED;
-			fsize 	= "50px Hacker";
+			fsize 				= "50px Hacker";
 		}
 		console.log("Finish_Init()");
 		module.drawString( finishtxt_msg1 , "25px Hacker", "#ffffff", (FAR_ANCHOR<<1) + MED_ANCHOR , (TOP_ANCHOR << 3) + alignY, finish_containerbox, 250,'center')
